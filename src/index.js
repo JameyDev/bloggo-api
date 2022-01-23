@@ -1,6 +1,11 @@
 const express = require('express');
+const { ApolloServer, gql } = require('apollo-server-express');
+
 const app = express();
 
 app.get('/', (req, res) => res.send('Hello World'));
 
-app.listen(4000, () => console.log('Listening on port 4000'));
+const port = process.env.PORT || 4000;
+app.listen(port, () => {
+	console.log(`Server running at http://localhost:${port}`)
+});
